@@ -67,4 +67,7 @@ int main(){
     
     int l=0;
     cout<<!l<<endl;
+
+    int z=!-4; // any number other than zero is treated as 1 or true
+    cout<<"z="<<z<<endl;
 }
