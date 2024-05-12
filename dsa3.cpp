@@ -20,9 +20,9 @@ int main(){
 
     // Left shift
     cout<<(5<<1)<<endl;
-    cout<<(3<<3)<<endl;
+    cout<<(3<<2)<<endl;
     // 5<<1 = 5 ko 1 baar left shift kar do  ...101=...1010 no. becomes double
-    // 3<<2 = 3 ko 2 baar left shift kar do  ...11=...1100  no. becomes eight times
+    // 3<<2 = 3 ko 2 baar left shift kar do  ...11=...1100  no. becomes four times
     //                                                 but for big numbers it becomes negative
     // jitne bar left shift karte utne baar no. 2 se multiplt hota , but for bigger no.s it becomes -tive becoz last bit becomes one
     

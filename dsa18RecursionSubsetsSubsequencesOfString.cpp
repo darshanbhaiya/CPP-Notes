@@ -103,7 +103,7 @@ private:
         }
 
 
-        int number=digits[index]-'0'; // conversion of character to string => eg: '1' => 1
+        int number=digits[index]-'0'; // conversion of character to number  => eg: '1' => 1
         string value=mapping[number];
 
         for(int i=0;i<value.length();i++){

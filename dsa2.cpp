@@ -26,7 +26,7 @@ int main(){
 
    
 
-  //  // cin doesn't read "_" (space),"\t"(tab),"\n" as input
+  //  // cin doesn't read "_"(space), "\t"(tab), "\n"(enter) as input
 
   //  int c,d,e;
   //  cout<<"Enter value of cde : ";

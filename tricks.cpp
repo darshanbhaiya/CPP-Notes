@@ -67,6 +67,14 @@ int main(){
 
     // vector<vector <int>> visited=m; => try to initialise 2D vector with a size
     // vector<vector<int>> vec(row); 
+
+
+    // sum+=b[j--]-'0'; // string to int
+    // char ch='0' + 1 // int to char
+
+    // sum of two binary numbers
+    // result=to_string(sum%2)+result;
+    // carry=sum/2;
  
  
  
