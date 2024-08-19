@@ -159,7 +159,7 @@ int main(){
 
 /*
 
-  Mode of inheritance : 
+  Mode of inheritance : =>
 
              Base class member |      Public        |   Protected       |   Private
              Access Specifier  |                    |                   |

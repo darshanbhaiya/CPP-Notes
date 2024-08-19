@@ -17,9 +17,16 @@ class A{
         cout<<"Hello darshan !! "<<name<<" is my friend"<<endl;
     }
 
+    // int sayHello(string name){
+    //     cout<<"Hello darshan !!"<<endl;  // => error
+    //     return 1;
+    // }
+
     void sayHello(char ch){
         cout<<"Hello darshan !! "<<ch<<" is my friend"<<endl;
     }
+
+    
     
     int sayHello(string name,int n){
         cout<<"Hello darshan !! "<<name<<" is my friend"<<endl;
@@ -88,6 +95,8 @@ int main(){
                                                     } 
                                 => refer notes
 
+                        iii) constucter overloading => constructors with different parameters        
+
 
             2) runtime time or dynamic polymorphism => run time mai pata hai ki kya cheez kis kis form mai exist karti hai
                         i) method overriding or function overriding
@@ -96,6 +105,7 @@ int main(){
                             rules: same name, same parameter, possible through inheritance only
                             // refer notes
                             => for eg: speak in animal and bark in dog
+                            => parent class function is said to be overridden
                         
 
 
@@ -109,7 +119,7 @@ A obj;
 obj.sayHello();
 obj.sayHello("sujal");
 
-B obj1,obj2;
+B obj1,obj2; // class B ke do objects banaye
 
 obj1.a=4;
 obj2.a=7;

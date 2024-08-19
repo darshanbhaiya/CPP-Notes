@@ -37,6 +37,7 @@ class hero{
         // destructor
         ~hero(){
             cout<<"destructor bhai called"<<endl;
+            delete name; // to free dynamically allocated memory
         }
 };
 
@@ -61,11 +62,11 @@ class heroo{
             this->level=level;
         }
 
-        // making our own copy constrycter => deep copy
+        // making our own copy constructer => deep copy
         heroo(heroo &temp){
             cout<<"copy constructer called"<<endl;
 
-            char *ch=new char[strlen(temp.name)+1]; // +1 for null character // temp is not a pointer => temp and object(let h1) have same memory block with same name
+            char *ch=new char[strlen(temp.name)+1]; // +1 for null character // temp is not a pointer => temp and object(let h1) have same memory block for name
             strcpy(ch,temp.name);
             this->name=ch;
 
@@ -199,19 +200,19 @@ int main(){
    
    */
 
-  // static creation
-  hero x;
-  // dynamic creation
-  hero *y=new hero; // or hero *y=new hero();
+    // static creation
+    hero x;
+    // dynamic creation
+    hero *y=new hero; // or hero *y=new hero();
 
    
 
 
 
-delete y; // destructor called to delete dynamically created object manually
-// destructor called atomatically for " static objects " only
+    delete y; // destructor called to delete dynamically created object manually
+    // destructor called atomatically for " static objects " only
 
-// constructor and destructor are called only "once" for an object while creation and destruction resp.
+    // constructor and destructor are called only "once" for an object while creation and destruction resp.
 
 
 }

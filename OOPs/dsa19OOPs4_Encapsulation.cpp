@@ -20,6 +20,8 @@ class student{
 int main(){
 
     /*
+
+    
     datamembers = properties = states
     functions = methods = behaviour
 

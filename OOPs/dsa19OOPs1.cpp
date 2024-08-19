@@ -81,6 +81,7 @@ class hero{
     hero(int health){
         //health=health; // braces ke ander ke health ke ander uski hi value ko daal diya // health having nearest scope is accessed
         this->health=health; // current object ke health mai parameterised health daal di
+        // 'this' stores current object address
        
         cout<<"address of current object(this): "<<this<<endl;
     }
@@ -112,9 +113,10 @@ class heroo{
     // heroo (heroo temp){
     //     // temp is statically allocated
     //     this->income=temp.income;         => gives error (refer notes)
-    //     this-> awards=temp.awards;
+    //     this->awards=temp.awards;
 
     // }
+    
 
     // pass by reference
     heroo (heroo &temp){
@@ -261,7 +263,7 @@ int main(){
     cout<<"health of h8 is : "<<(*h8).health<<endl; 
     cout<<"cash of h8 is : "<<(*h8).getCash()<<endl;
     cout<<"cash of h8: ";
-    h8->print(); // 15
+    h8->print(); // 15 // '->'  becoz it is created dynamically
 
     //heroo h9; // agar ek bhi constructor bana liya toh inbuild constructor or default constructor made by compiler hat jaata hai they doesn't exist and it gives error
                 // bina parameter wala constructor call hoga but it doesn't exist as we have made parameterised constructor
@@ -273,6 +275,7 @@ int main(){
     copy constructer => created at object creation
                      => copy of object
                      => created automattically by compiler => copies every thing
+                      // copy constructor is generated inbuiltly which copies everything
                      // refer notes
 
                      our copy constructor copies only mentioned items by us
@@ -290,6 +293,7 @@ int main(){
     cout<<"level of c1: "<<c1.level<<endl;    
 
     // creating our own copy constructor // our copy constructor copies only mentioned items by us
+   
     heroo c3(44);
     heroo c4(c3);              
     cout<<"income of c3: "<<c3.income<<endl;             

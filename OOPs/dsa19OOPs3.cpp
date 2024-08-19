@@ -51,7 +51,7 @@ class hero{
 
 
 
-int hero::timeToComplete=5;
+int hero::timeToComplete=5;  // initialising static member
 
 int main(){
 
@@ -59,7 +59,7 @@ int main(){
 
     H.W.
     "const" keyword : in object creation, in const function, in data member types
-    initialisation list
+    "initialisation list"
     
     */
 
@@ -72,9 +72,12 @@ int main(){
                                     => becoz it doesn't belong to object but to whole class
                     => common for all objects
 
-                    // syntax to access the variable
+                    // syntax to initialise the variable
                     initialise => dataType className :: dataMemberName = value;
                     // initialised outside the class
+
+                    // syntax to access the variable
+                    className :: dataMemberName
 
                     :: => scope resolution operator
 
@@ -94,7 +97,7 @@ int main(){
   /*
   
   static function : => no need to create object to call it => use class name to call it
-                    => this keyword nahi hota => becoz this => pointer to current object
+                    => this keyword nahi hota => becoz 'this' => pointer to current object
                                 => par yaha current object hi nahi hai
                     => can access only static members
                     => can be also called using object => chal jata hai => but not recommended 
