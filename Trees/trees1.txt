@@ -1,0 +1,170 @@
+ 
+ ### LEVEL ORDER TRAVERSAL
+ 
+ vector<vector<int>> levelOrder(TreeNode* root) {
+
+        vector<vector<int>> result;
+
+        if(root==NULL){
+            return result;
+        }
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while(!q.empty()){
+            int level_size=q.size();
+            vector<int> current_level;
+
+            for(int i=0;i<level_size;i++){
+                TreeNode * node=q.front();
+                q.pop();
+                current_level.push_back(node->val);
+
+                if(node->left!=nullptr){
+                    q.push(node->left);
+                }
+
+                if(node->right!=nullptr){
+                    q.push(node->right);
+                }
+            }
+
+            result.push_back(current_level);
+        }
+
+        return result;
+    }
+
+
+
+_____________________________________________________________________________________________________
+
+
+    ## INORDER TRAVERSAL
+
+    void inorderTraversal(TreeNode* node,vector<int> &ans){
+
+        if(node==NULL) return;
+
+        traversal(node->left,ans);
+        ans.push_back(node->val);
+        traversal(node->right,ans);
+
+    }
+
+
+ _____________________________________________________________________________________________________
+
+
+ ## POSTORDER TRAVERSAL
+
+
+void postorderTraversal(TreeNode* root,vector<int> &ans){
+        
+        if(root==NULL) return;
+
+        postorder(root->left,ans);
+        postorder(root->right,ans);
+        ans.push_back(root->val);
+
+    }  
+
+
+
+_____________________________________________________________________________________________________
+
+ ## PREORDER TRAVERSAL
+
+
+void preorder(TreeNode* root,vector<int> &ans){
+    
+        if(root==NULL) return;
+
+        ans.push_back(root->val);
+        preorder(root->left,ans);
+        preorder(root->right,ans);
+    }    
+
+_____________________________________________________________________________________________________
+
+ ## HEIGHT OF A TREE
+
+ int maxDepth(TreeNode* root) {
+
+        if(root==NULL) return 0;
+        
+        return 1+max(maxDepth(root->left),maxDepth(root->right));
+    }  
+
+
+TC=> O(n)    
+SC=> O(Height)    for skew tree =>O(n)
+
+
+_____________________________________________________________________________________________________
+
+ ## DIAMETER OF BINARY TREE => longest path between any two nodes
+
+
+class Solution {
+
+private: 
+    int height(TreeNode* root){
+        if(root == NULL) return 0;
+        return 1 + max(height(root->left), height(root->right));
+    }
+
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(root == NULL) return 0;
+
+        // Calculate the diameters of the left and right subtrees
+        int o1 = diameterOfBinaryTree(root->left);
+        int o2 = diameterOfBinaryTree(root->right);
+
+        // Calculate the diameter passing through the root
+        int o3 = 1 + height(root->left) + height(root->right);
+
+        // Return the maximum of the three
+        return max(o1, max(o2, o3));
+    }
+};
+
+
+TC=> O(n^2)
+
+
+class Solution {
+
+private: 
+    //<diameter,height>
+    pair<int,int> diameterFast(TreeNode* root){
+        if(root==NULL){
+            pair<int,int> p=make_pair(0,0);
+            return p;
+        }
+
+        pair<int,int> left=diameterFast(root->left);
+        pair<int,int> right=diameterFast(root->right);
+
+        int o1=left.first;
+        int o2=right.first;
+        int o3=left.second+right.second+1;
+
+        pair<int,int> ans;
+        ans.first=max(o1, max(o2, o3));
+        ans.second=max(left.second,right.second)+1;
+
+        return ans;
+    }
+
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        return diameterFast(root).first-1;  // -1 becoz leet code que doesn't include that node
+    }
+};
+
+
+TC=>O(n)
+SC=> O(Height)    for skew tree =>O(n)

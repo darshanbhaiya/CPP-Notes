@@ -21,7 +21,7 @@ int main(){
     //  maxi=max(maxi,num[i]);
     //  swap(arr[start],arr[end]);
  
-    // iswalnum('$')
+    // isalnum('$')
     // If the ch is an alphanumeric character, then a non-zero value is returned.
     // If it is not then 0 is returned.
 
@@ -75,7 +75,21 @@ int main(){
     // sum of two binary numbers
     // result=to_string(sum%2)+result;
     // carry=sum/2;
+
+
+    // unordered_set<int> set1(arr1.begin(), arr1.end());
+    // if (set1.find(num) != set1.end()) {
+    //         result.push_back(num);
+    //         set1.erase(num);  // To avoid duplicates in the result
+    // }
  
+
+
+    // initializer list
+    // Box(T d) : data(d) {} in the C++ code is part of a constructor that uses initializer list syntax. 
+    // This is the initializer list. It initializes the member variable data with the value of the parameter d. In this case, data is being initialized directly using d before the constructor body is executed.
+    // Efficient Initialization: It allows the member variable data to be initialized directly rather than assigned a value after it is constructed. This can be more efficient, especially for complex data types, since it avoids the temporary creation of a default object before assignment.
+    // Consistency: For certain data members (like constants or references), using an initializer list is the only way to initialize them.
  
  
  }
